@@ -1,6 +1,6 @@
 /* ----------------------------------------------------
-   STUDENT iPHONE 17 PRO MAX REWARDS — VIBRANT BLUE THEME
-   Royal Sapphire & Electric Blue Palette (No Complete Black)
+   STUDENT iPHONE 17 PRO MAX REWARDS — BALANCED LUXURY UI
+   Warm Sunset Gold & Pristine Obsidian Contrast Palette
 ---------------------------------------------------- */
 
 :root {
@@ -8,33 +8,27 @@
   --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   
-  --bg-page: #f8fafc;
-  --bg-gradient: linear-gradient(180deg, #f8fafc 0%, #eff6ff 40%, #e0f2fe 100%);
+  --bg-page: #fafaf9;
+  --bg-gradient: linear-gradient(180deg, #fafaf9 0%, #fffcf5 35%, #fef3c7 100%);
   --bg-card: #ffffff;
   
   --text-main: #0f172a;
-  --text-sub: #334155;
+  --text-sub: #475569;
   --text-muted: #64748b;
   
-  /* Vibrant Royal Blue Palette */
-  --blue-primary: #1d4ed8;
-  --blue-dark: #1e3a8a;
-  --blue-accent: #2563eb;
-  --blue-cyan: #0284c7;
-  --blue-light: #dbeafe;
-  --blue-gradient: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #0284c7 100%);
-  
+  /* Harmonious Sunset Gold & Obsidian Highlights */
   --gold-primary: #d97706;
   --gold-accent: #f59e0b;
+  --gold-gradient: linear-gradient(135deg, #d97706 0%, #ea580c 50%, #b45309 100%);
   
-  --cta-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  --cta-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
+  --cta-gradient: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  --cta-shadow: 0 12px 32px rgba(234, 88, 12, 0.35);
   
-  --border-light: rgba(37, 99, 235, 0.2);
-  --border-subtle: #dbeafe;
+  --border-light: rgba(245, 158, 11, 0.25);
+  --border-subtle: #fef3c7;
   
-  --shadow-sm: 0 4px 12px rgba(29, 78, 216, 0.06);
-  --shadow-md: 0 10px 30px rgba(29, 78, 216, 0.12);
+  --shadow-sm: 0 4px 12px rgba(217, 119, 6, 0.06);
+  --shadow-md: 0 10px 30px rgba(217, 119, 6, 0.12);
   --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
   
   --radius-sm: 10px;
@@ -85,7 +79,7 @@ body.warm-champagne-theme {
   transform: translateX(-50%);
   width: 550px;
   height: 550px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 .orb-2 {
@@ -93,11 +87,11 @@ body.warm-champagne-theme {
   right: -100px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(2, 132, 199, 0.18) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 a {
-  color: var(--blue-primary);
+  color: var(--gold-primary);
   text-decoration: none;
   transition: opacity var(--transition-fast);
 }
@@ -121,7 +115,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(248, 250, 252, 0.94);
+  background: rgba(250, 250, 249, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
@@ -141,20 +135,20 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--blue-dark);
+  color: var(--text-main);
   font-weight: 700;
 }
 
 .logo-badge {
   width: 34px;
   height: 34px;
-  background: var(--blue-gradient);
+  background: var(--gold-gradient);
   color: #ffffff;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
 }
 
 .logo-title {
@@ -162,11 +156,11 @@ button {
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.01em;
-  color: var(--blue-dark);
+  color: var(--text-main);
 }
 
 .logo-highlight {
-  color: var(--blue-accent);
+  color: var(--gold-primary);
 }
 
 .btn-status-nav {
@@ -176,7 +170,7 @@ button {
   padding: 8px 16px;
   background: #ffffff;
   border: 1px solid var(--border-light);
-  color: var(--blue-dark);
+  color: var(--text-main);
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
@@ -185,22 +179,21 @@ button {
 }
 
 .btn-status-nav:hover {
-  background: #eff6ff;
-  border-color: var(--blue-accent);
+  background: #fef3c7;
+  border-color: var(--gold-primary);
   transform: translateY(-1px);
 }
 
 
 /* ----------------------------------------------------
-   2. SOCIAL PROOF TICKER (BLUE HIGHLIGHT, NO BLACK)
+   2. SOCIAL PROOF TICKER (BALANCED NEUTRAL SLATE)
 ---------------------------------------------------- */
 .proof-ticker {
-  background: #eff6ff;
-  border-bottom: 1px solid #dbeafe;
-  color: #1e40af;
+  background: #1e293b;
+  color: #fef08a;
   padding: 9px 16px;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -213,21 +206,21 @@ button {
 .pulse-dot {
   width: 8px;
   height: 8px;
-  background-color: #2563eb;
+  background-color: var(--gold-accent);
   border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.8);
-  animation: pulseBlue 1.8s infinite;
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.8);
+  animation: pulseGold 1.8s infinite;
 }
 
-@keyframes pulseBlue {
-  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.8); }
-  70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+@keyframes pulseGold {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.8); }
+  70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
 }
 
 
 /* ----------------------------------------------------
-   3. HERO SECTION (BLUE TYPOGRAPHY)
+   3. HERO SECTION (WARM SUNSET GOLD & OBSIDIAN)
 ---------------------------------------------------- */
 .hero {
   position: relative;
@@ -249,9 +242,9 @@ button {
   align-items: center;
   gap: 6px;
   padding: 6px 16px;
-  background: rgba(37, 99, 235, 0.12);
+  background: rgba(245, 158, 11, 0.15);
   border: 1px solid var(--border-light);
-  color: var(--blue-accent);
+  color: var(--gold-primary);
   border-radius: var(--radius-full);
   font-size: 0.78rem;
   font-weight: 700;
@@ -265,12 +258,12 @@ button {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: var(--blue-dark);
+  color: var(--text-main);
   margin-bottom: 12px;
 }
 
 .headline-gold {
-  background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 50%, #0369a1 100%);
+  background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -287,7 +280,7 @@ button {
   align-items: center;
   gap: 14px;
   background: #ffffff;
-  border: 2px solid var(--blue-accent);
+  border: 2px solid var(--gold-accent);
   box-shadow: var(--shadow-md);
   padding: 8px 22px;
   border-radius: var(--radius-lg);
@@ -302,14 +295,14 @@ button {
 .price-symbol {
   font-size: 1.7rem;
   font-weight: 700;
-  color: var(--blue-accent);
+  color: var(--gold-primary);
 }
 
 .price-value {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 6vw, 3.5rem);
   font-weight: 800;
-  color: var(--blue-dark);
+  color: var(--text-main);
   line-height: 1;
 }
 
@@ -328,9 +321,9 @@ button {
 }
 
 .price-off {
-  background: #dbeafe;
-  border: 1px solid #93c5fd;
-  color: #1e40af;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
   padding: 2px 8px;
   border-radius: var(--radius-full);
   font-size: 0.7rem;
@@ -359,7 +352,7 @@ button {
   transform: translate(-50%, -50%);
   width: 85%;
   height: 85%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, rgba(2, 132, 199, 0.1) 60%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, rgba(251, 191, 36, 0.12) 60%, transparent 70%);
   filter: blur(35px);
   z-index: 1;
   pointer-events: none;
@@ -372,7 +365,7 @@ button {
   height: auto;
   max-height: 340px;
   object-fit: contain;
-  filter: drop-shadow(0 18px 30px rgba(37, 99, 235, 0.18));
+  filter: drop-shadow(0 18px 30px rgba(217, 119, 6, 0.2));
   animation: floatBounce 4s ease-in-out infinite;
 }
 
@@ -465,7 +458,7 @@ button {
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--blue-primary);
+  color: var(--gold-primary);
 }
 
 .trust-label {
@@ -491,7 +484,7 @@ button {
 }
 
 .details-section {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
   border-y: 1px solid var(--border-light);
 }
 
@@ -508,7 +501,7 @@ button {
 .sub-tag {
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--blue-accent);
+  color: var(--gold-primary);
   letter-spacing: 0.08em;
 }
 
@@ -516,7 +509,7 @@ button {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3.8vw, 2.2rem);
   font-weight: 800;
-  color: var(--blue-dark);
+  color: var(--text-main);
   margin-top: 4px;
 }
 
@@ -550,8 +543,8 @@ button {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #dbeafe;
-  color: var(--blue-accent);
+  background: #fef3c7;
+  color: var(--gold-primary);
   font-weight: 700;
   font-size: 0.8rem;
   display: flex;
@@ -562,8 +555,8 @@ button {
 .step-icon {
   width: 44px;
   height: 44px;
-  background: rgba(37, 99, 235, 0.1);
-  color: var(--blue-accent);
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--gold-primary);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -574,7 +567,7 @@ button {
 .step-card h3 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--blue-dark);
+  color: var(--text-main);
   margin-bottom: 6px;
 }
 
@@ -610,7 +603,7 @@ button {
 .card-head h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--blue-dark);
+  color: var(--text-main);
 }
 
 .details-card ul {
@@ -631,7 +624,7 @@ button {
   content: "•";
   position: absolute;
   left: 2px;
-  color: var(--blue-accent);
+  color: var(--gold-primary);
   font-size: 1.1rem;
   line-height: 1;
 }
@@ -661,7 +654,7 @@ button {
   text-align: left;
   font-size: 0.92rem;
   font-weight: 600;
-  color: var(--blue-dark);
+  color: var(--text-main);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -669,7 +662,7 @@ button {
 
 .faq-icon {
   font-size: 1.2rem;
-  color: var(--blue-accent);
+  color: var(--gold-primary);
   transition: transform var(--transition-fast);
 }
 
@@ -702,14 +695,14 @@ button {
   left: 0;
   right: 0;
   z-index: 90;
-  background: rgba(248, 250, 252, 0.96);
+  background: rgba(250, 250, 249, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--border-light);
   padding: 10px 16px calc(10px + env(safe-area-inset-bottom)) 16px;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 -6px 20px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 -6px 20px rgba(217, 119, 6, 0.15);
 }
 
 .m-price-info {
@@ -728,7 +721,7 @@ button {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--blue-dark);
+  color: var(--text-main);
 }
 
 .btn-m-cta {
@@ -739,7 +732,7 @@ button {
   font-weight: 800;
   font-size: 0.9rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
 }
 
 @media (max-width: 768px) {
@@ -748,7 +741,7 @@ button {
 
 
 /* ----------------------------------------------------
-   8. FOOTER (ROYAL NAVY BLUE, NO COMPLETE BLACK)
+   8. FOOTER
 ---------------------------------------------------- */
 .site-footer {
   background: #0f172a;
@@ -784,7 +777,7 @@ button {
   gap: 16px;
 }
 
-.footer-nav a { color: #93c5fd; }
+.footer-nav a { color: #cbd5e1; }
 
 .footer-legal {
   border-top: 1px solid #1e293b;
@@ -874,8 +867,8 @@ button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #dbeafe;
-  color: var(--blue-dark);
+  background: #fef3c7;
+  color: var(--text-main);
   font-size: 1.3rem;
   line-height: 1;
   display: flex;
@@ -883,7 +876,7 @@ button {
   justify-content: center;
 }
 
-.close-btn:hover { background: #bfdbfe; }
+.close-btn:hover { background: #fde68a; }
 
 .modal-header { margin-bottom: 18px; }
 
@@ -891,7 +884,7 @@ button {
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 800;
-  color: var(--blue-dark);
+  color: var(--text-main);
 }
 
 .modal-subtitle {
@@ -910,14 +903,14 @@ button {
   display: block;
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--blue-dark);
+  color: var(--text-main);
   margin-bottom: 4px;
 }
 
 .form-input {
   width: 100%;
   padding: 12px 14px;
-  background: #f8fafc;
+  background: #fffcf5;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   font-family: inherit;
@@ -927,15 +920,15 @@ button {
 
 .form-input:focus {
   outline: none;
-  border-color: var(--blue-accent);
+  border-color: var(--gold-primary);
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
 }
 
 .input-mobile-box {
   display: flex;
   align-items: center;
-  background: #f8fafc;
+  background: #fffcf5;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -945,7 +938,7 @@ button {
   padding: 12px 0 12px 14px;
   font-weight: 700;
   font-size: 0.92rem;
-  color: var(--blue-accent);
+  color: var(--gold-primary);
 }
 
 .input-phone {
@@ -958,7 +951,7 @@ button {
 
 .form-select {
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%3c2563eb' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%3cd97706' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 14px center;
 }
@@ -975,7 +968,7 @@ button {
   width: 17px;
   height: 17px;
   margin-top: 2px;
-  accent-color: var(--blue-accent);
+  accent-color: var(--gold-primary);
 }
 
 .checkbox-group label {
@@ -986,7 +979,7 @@ button {
 .btn-modal-primary {
   width: 100%;
   padding: 15px;
-  background: var(--blue-gradient);
+  background: var(--gold-gradient);
   color: #ffffff;
   font-family: var(--font-display);
   font-size: 1rem;
@@ -996,7 +989,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.35);
 }
 
 .btn-modal-primary:active { transform: scale(0.98); }
@@ -1014,7 +1007,7 @@ button {
 }
 
 .summary-box {
-  background: #eff6ff;
+  background: #fffcf5;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 14px;
@@ -1035,19 +1028,19 @@ button {
 }
 
 .emoji { font-size: 1.2rem; }
-.name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--blue-dark); }
+.name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--text-main); }
 .sub { font-size: 0.75rem; color: var(--text-muted); }
 
 .price {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.2rem;
-  color: var(--blue-accent);
+  color: var(--gold-primary);
 }
 
 .summary-divider {
   height: 1px;
-  background: #dbeafe;
+  background: var(--border-subtle);
   margin: 10px 0;
 }
 
@@ -1066,7 +1059,7 @@ button {
 .pay-tabs {
   display: flex;
   gap: 4px;
-  background: #dbeafe;
+  background: #fef3c7;
   padding: 3px;
   border-radius: var(--radius-md);
   margin-bottom: 12px;
@@ -1084,7 +1077,7 @@ button {
 
 .pay-tab.active {
   background: #ffffff;
-  color: var(--blue-accent);
+  color: var(--gold-primary);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1111,8 +1104,8 @@ button {
 }
 
 .upi-card.selected {
-  border-color: var(--blue-accent);
-  background: #eff6ff;
+  border-color: var(--gold-primary);
+  background: #fffcf5;
 }
 
 .icon {
@@ -1137,7 +1130,7 @@ button {
   flex-direction: column;
   align-items: center;
   padding: 12px;
-  background: #eff6ff;
+  background: #fffcf5;
   border-radius: var(--radius-md);
   font-size: 0.78rem;
   color: var(--text-sub);
@@ -1148,12 +1141,12 @@ button {
 .card-form .row { display: flex; gap: 8px; margin-top: 8px; }
 
 .legal-purpose {
-  background: #eff6ff;
-  border: 1px solid #dbeafe;
+  background: #fffbe8;
+  border: 1px solid #fef3c7;
   padding: 8px 10px;
   border-radius: var(--radius-sm);
   font-size: 0.72rem;
-  color: #1e40af;
+  color: #92400e;
   display: flex;
   gap: 6px;
   margin-bottom: 16px;
@@ -1200,8 +1193,8 @@ button {
 }
 
 .digital-ticket {
-  background: #eff6ff;
-  border: 2px dashed #2563eb;
+  background: #fffcf5;
+  border: 2px dashed #059669;
   border-radius: var(--radius-md);
   padding: 14px;
   margin: 14px 0;
@@ -1218,7 +1211,7 @@ button {
 }
 
 .status-badge {
-  background: #2563eb;
+  background: #059669;
   color: #fff;
   padding: 2px 6px;
   border-radius: var(--radius-full);
@@ -1233,7 +1226,7 @@ button {
 .field { display: flex; flex-direction: column; }
 .lbl { font-size: 0.72rem; color: var(--text-muted); }
 .val { font-size: 0.88rem; font-weight: 700; }
-.val.highlight { font-family: var(--font-display); color: var(--blue-primary); font-size: 1rem; font-weight: 800; }
+.val.highlight { font-family: var(--font-display); color: var(--gold-primary); font-size: 1rem; font-weight: 800; }
 .val.green { color: #059669; }
 
 .success-msg {
@@ -1277,7 +1270,7 @@ button {
   margin-top: 14px;
   padding: 14px;
   border-radius: var(--radius-md);
-  background: #eff6ff;
+  background: #fffcf5;
   border: 1px solid var(--border-light);
   text-align: left;
 }
