@@ -1,6 +1,6 @@
 /* ----------------------------------------------------
    STUDENT REWARDS — ONE DAY AI-ML FLASH COURSE CAMPAIGN
-   Client Logic & Validation Database
+   Client Logic & Rotatable Slot-Machine Counter
 ---------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,12 +22,47 @@ document.addEventListener('DOMContentLoaded', () => {
     return BASE_COUNT + getWaitlistStorage().length;
   }
 
-  function updateLiveCounters() {
+  // --- ROTATABLE SLOT-MACHINE COUNTER ANIMATION ---
+  let hasAnimatedCounter = false;
+
+  function animateCounterRoll(target) {
+    const liveCounterDisplay = document.getElementById('liveCounterDisplay');
+    if (!liveCounterDisplay) return;
+
+    // Add 3D rotation CSS animation
+    liveCounterDisplay.classList.remove('spinning');
+    void liveCounterDisplay.offsetWidth; // Trigger reflow
+    liveCounterDisplay.classList.add('spinning');
+
+    // Number rolling effect starting from 280 up to target
+    const startVal = Math.max(0, target - 45);
+    const duration = 1500; // 1.5 seconds
+    const startTime = performance.now();
+
+    function updateFrame(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing out cubic
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.floor(startVal + (target - startVal) * easedProgress);
+
+      liveCounterDisplay.textContent = `${currentVal}+`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateFrame);
+      } else {
+        liveCounterDisplay.textContent = `${target}+`;
+        setTimeout(() => liveCounterDisplay.classList.remove('spinning'), 200);
+      }
+    }
+
+    requestAnimationFrame(updateFrame);
+  }
+
+  function updateLiveCounters(triggerSpin = false) {
     const total = getTotalInterestCount();
     const countText = `${total}+`;
-
-    const liveCounterDisplay = document.getElementById('liveCounterDisplay');
-    if (liveCounterDisplay) liveCounterDisplay.textContent = countText;
 
     const trustCounter = document.getElementById('trustCounter');
     if (trustCounter) trustCounter.textContent = countText;
@@ -39,7 +74,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const counterNoteText = document.getElementById('counterNoteText');
     if (counterNoteText) counterNoteText.textContent = `${total} students`;
+
+    if (triggerSpin || !hasAnimatedCounter) {
+      hasAnimatedCounter = true;
+      animateCounterRoll(total);
+    } else {
+      const liveCounterDisplay = document.getElementById('liveCounterDisplay');
+      if (liveCounterDisplay) liveCounterDisplay.textContent = countText;
+    }
   }
+
+  // IntersectionObserver to spin/rotate counter when scrolled into view
+  const counterSection = document.querySelector('.counter-section');
+  if (counterSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounterRoll(getTotalInterestCount());
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(counterSection);
+  }
+
 
   // Active Current Registration State
   const currentRegistration = {
@@ -139,8 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
       currentRegistration.email = emailInput;
       currentRegistration.regId = randomId;
 
-      // Update counters
-      updateLiveCounters();
+      // Update counters with spin animation
+      updateLiveCounters(true);
 
       // Render Success Ticket Pass
       document.getElementById('successRegId').textContent = randomId;
