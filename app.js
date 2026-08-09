@@ -32,8 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const trustCounter = document.getElementById('trustCounter');
     if (trustCounter) trustCounter.textContent = countText;
 
-    const tickerCounterText = document.getElementById('tickerCounterText');
-    if (tickerCounterText) tickerCounterText.textContent = `${total}+ students`;
+    const tickerCounterEls = document.querySelectorAll('.ticker-counter-text');
+    tickerCounterEls.forEach(el => {
+      el.textContent = `${total}+ students`;
+    });
 
     const counterNoteText = document.getElementById('counterNoteText');
     if (counterNoteText) counterNoteText.textContent = `${total} students`;

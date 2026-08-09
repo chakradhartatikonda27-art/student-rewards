@@ -170,19 +170,6 @@ button {
   gap: 8px;
 }
 
-.btn-admin-nav {
-  padding: 8px 14px;
-  background: #fef3c7;
-  border: 1px solid var(--gold-accent);
-  color: #92400e;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem;
-  font-weight: 700;
-  transition: all var(--transition-fast);
-}
-
-.btn-admin-nav:hover { background: #fde68a; }
-
 .btn-status-nav {
   display: flex;
   align-items: center;
@@ -206,21 +193,48 @@ button {
 
 
 /* ----------------------------------------------------
-   2. SOCIAL PROOF TICKER
+   2. CONTINUOUS SCROLLING MARQUEE TICKER
 ---------------------------------------------------- */
 .proof-ticker {
   background: #1e293b;
   color: #fef08a;
-  padding: 9px 16px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  text-align: center;
+  padding: 10px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
 }
 
-.ticker-inner {
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marqueeScroll 22s linear infinite;
+  will-change: transform;
+}
+
+.proof-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+}
+
+.ticker-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 .pulse-dot {
@@ -230,6 +244,7 @@ button {
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.8);
   animation: pulseGold 1.8s infinite;
+  display: inline-block;
 }
 
 @keyframes pulseGold {
@@ -1042,7 +1057,7 @@ button {
 
 
 /* ----------------------------------------------------
-   12. MODALS SYSTEM & ADMIN DASHBOARD
+   12. MODALS SYSTEM
 ---------------------------------------------------- */
 .modal-overlay {
   position: fixed;
@@ -1080,11 +1095,6 @@ button {
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
   transform: scale(0.94) translateY(16px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.admin-card {
-  max-width: 780px;
-  text-align: left;
 }
 
 .mobile-drag-handle {
@@ -1317,125 +1327,4 @@ button {
   background: #fffcf5;
   border: 1px solid var(--border-light);
   text-align: left;
-}
-
-/* ----------------------------------------------------
-   13. ADMIN KPI DASHBOARD STYLES
----------------------------------------------------- */
-.kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.kpi-card {
-  background: #fffcf5;
-  border: 1px solid var(--border-light);
-  padding: 12px 10px;
-  border-radius: var(--radius-md);
-  text-align: center;
-}
-
-.kpi-val {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--gold-primary);
-}
-
-.kpi-lbl {
-  font-size: 0.72rem;
-  color: var(--text-sub);
-  font-weight: 600;
-}
-
-.traffic-box {
-  background: #f8fafc;
-  border: 1px solid var(--border-light);
-  padding: 14px;
-  border-radius: var(--radius-md);
-  margin-bottom: 18px;
-}
-
-.traffic-box h4 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.source-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.source-item {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.bar-bg {
-  width: 100%;
-  height: 6px;
-  background: #e2e8f0;
-  border-radius: 99px;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  border-radius: 99px;
-}
-
-.admin-table-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.admin-table-header h4 {
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.btn-csv-export {
-  padding: 6px 14px;
-  background: #059669;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.78rem;
-  border-radius: var(--radius-full);
-}
-
-.table-responsive {
-  overflow-x: auto;
-  max-height: 220px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-}
-
-.admin-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.78rem;
-}
-
-.admin-table th,
-.admin-table td {
-  padding: 8px 10px;
-  text-align: left;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.admin-table th {
-  background: #fffcf5;
-  font-weight: 700;
-  color: var(--text-main);
-  position: sticky;
-  top: 0;
 }
