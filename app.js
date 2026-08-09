@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (mobileInput.length < 10) {
-        alert('Please enter a valid 10-digit Indian mobile number.');
+        alert('Please enter a valid 10-digit WhatsApp number.');
         return;
       }
 
@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Render Success Ticket Pass
       document.getElementById('successRegId').textContent = randomId;
       document.getElementById('successName').textContent = nameInput;
+      document.getElementById('successMobile').textContent = `+91 ${mobileInput.replace(/(\d{5})(\d{5})/, '$1 $2')}`;
 
       // Open Success Modal
       openModal(successModal);
@@ -236,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="font-family:var(--font-heading); font-size:1.2rem; font-weight:800; color:var(--gold-primary);">${found.regId}</div>
           <div style="font-size:0.85rem; color:var(--text-sub); margin-top:4px; display:flex; flex-direction:column; gap:2px;">
             <div><strong>Name:</strong> ${found.name}</div>
-            <div><strong>Mobile:</strong> +91 ${found.mobile}</div>
+            <div><strong>WhatsApp Number:</strong> +91 ${found.mobile}</div>
             <div><strong>Email:</strong> ${found.email}</div>
             <div><strong>Campaign:</strong> One Day ML Flash Course (₹599 + GST)</div>
             <div><strong>Status:</strong> Verified Waitlist Entry</div>
@@ -294,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ];
       const allData = [...list, ...dummyRecords];
 
-      let csv = 'Registration ID,Name,Mobile,Email,Date,Source,Status\n';
+      let csv = 'Registration ID,Name,WhatsApp Number,Email,Date,Source,Status\n';
       allData.forEach(r => {
         csv += `"${r.regId}","${r.name}","+91 ${r.mobile}","${r.email}","${r.date}","${r.source}","${r.status}"\n`;
       });
