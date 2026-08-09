@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- REGISTRATION FORM ---
+  // --- STEP 1: REGISTRATION FORM ---
   const registrationForm = document.getElementById('registrationForm');
   if (registrationForm) {
     registrationForm.addEventListener('submit', (e) => {
@@ -102,13 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Save user details
       currentRegistration.name = nameInput;
       currentRegistration.mobile = mobileInput;
       currentRegistration.city = citySelect;
 
+      // Update payment screen details
       document.getElementById('paySummaryName').textContent = currentRegistration.name;
       document.getElementById('paySummaryMobile').textContent = `+91 ${currentRegistration.mobile.replace(/(\d{5})(\d{5})/, '$1 $2')}`;
 
+      // IMMEDIATELY OPEN PAYMENT SECTION AFTER REGISTRATION
       openModal(payModal);
     });
   }
@@ -140,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --- PAYMENT PROCESSOR ---
+  // --- STEP 2 & 3: PAYMENT PROCESSOR & UNIQUE ID CREATION ---
   const paySubmitBtn = document.getElementById('paySubmitBtn');
   const payBtnText = document.getElementById('payBtnText');
   const payLoader = document.getElementById('payLoader');
@@ -152,22 +155,27 @@ document.addEventListener('DOMContentLoaded', () => {
       payLoader.classList.remove('hidden');
 
       setTimeout(() => {
+        // CREATE UNIQUE REGISTRATION ID
         const randomId = 'STU-' + Math.floor(100000 + Math.random() * 900000);
         currentRegistration.regId = randomId;
         currentRegistration.timestamp = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
+        // Save complete record
         saveRegistrationToStorage(currentRegistration);
 
         paySubmitBtn.disabled = false;
         payBtnText.classList.remove('hidden');
         payLoader.classList.add('hidden');
 
+        // Render Success Digital Ticket
         document.getElementById('successRegId').textContent = currentRegistration.regId;
         document.getElementById('successName').textContent = currentRegistration.name;
         document.getElementById('successMobile').textContent = `+91 ${currentRegistration.mobile.replace(/(\d{5})(\d{5})/, '$1 $2')}`;
 
+        // Show Success Modal
         openModal(successModal);
 
+        // Confetti animation
         if (typeof confetti === 'function') {
           confetti({
             particleCount: 100,
@@ -202,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `Campaign: iPhone 17 Pro Max Student Reward\n` +
         `Registration ID: ${currentRegistration.regId}\n` +
         `Name: ${currentRegistration.name}\n` +
-        `Amount Paid: ₹4,999 (Confirmed)\n\n` +
+        `Amount Paid: ₹599 (Confirmed)\n\n` +
         `Verified Pass: https://studentrewards.in/status?id=${currentRegistration.regId}`
       );
       window.open(`https://wa.me/?text=${text}`, '_blank');
@@ -226,11 +234,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (result) {
         statusResultContainer.innerHTML = `
           <div style="font-size:0.78rem; font-weight:800; color:#059669; margin-bottom:4px;">✓ VERIFIED REGISTRATION RECORD</div>
-          <div style="font-family:var(--font-heading); font-size:1.2rem; font-weight:800; color:var(--accent-blue);">${result.regId}</div>
+          <div style="font-family:var(--font-heading); font-size:1.2rem; font-weight:800; color:var(--gold-primary);">${result.regId}</div>
           <div style="font-size:0.85rem; color:var(--text-sub); margin-top:4px; display:flex; flex-direction:column; gap:2px;">
             <div><strong>Name:</strong> ${result.name}</div>
             <div><strong>Mobile:</strong> +91 ${result.mobile}</div>
-            <div><strong>Campaign:</strong> iPhone 17 Pro Max (₹4,999)</div>
+            <div><strong>Campaign:</strong> iPhone 17 Pro Max (₹599)</div>
             <div><strong>Status:</strong> Verified • Insured Allocation Queue</div>
           </div>
         `;
