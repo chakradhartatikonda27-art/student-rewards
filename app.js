@@ -1,5 +1,5 @@
 /* ----------------------------------------------------
-   STUDENT REWARDS — ONE DAY ML FLASH COURSE CAMPAIGN
+   STUDENT REWARDS — ONE DAY AI-ML FLASH COURSE CAMPAIGN
    Client Logic & Validation Database
 ---------------------------------------------------- */
 
@@ -170,8 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
     shareBtn.addEventListener('click', () => {
       if (navigator.share) {
         navigator.share({
-          title: 'Student Rewards — ML Flash Course',
-          text: `Join the One Day ML Flash Course waitlist & get a chance to win an iPhone 17 Pro Max! My Registration ID: ${currentRegistration.regId}`,
+          title: 'Student Rewards — AI-ML Flash Course',
+          text: `Join the One Day AI-ML Flash Course waitlist & get a chance to win an iPhone 17 Pro Max! My Registration ID: ${currentRegistration.regId}`,
           url: window.location.href
         }).catch(() => {});
       } else {
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     whatsappBtn.addEventListener('click', () => {
       const text = encodeURIComponent(
         `🎉 *Joined the Student Rewards Waitlist!*\n\n` +
-        `Campaign: One Day ML Flash Course + iPhone 17 Pro Max Reward\n` +
+        `Campaign: One Day AI-ML Flash Course + iPhone 17 Pro Max Reward\n` +
         `Registration ID: ${currentRegistration.regId}\n` +
         `Name: ${currentRegistration.name}\n\n` +
         `Join the waitlist here: ${window.location.href}`
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div><strong>Name:</strong> ${found.name}</div>
             <div><strong>WhatsApp Number:</strong> +91 ${found.mobile}</div>
             <div><strong>Email:</strong> ${found.email}</div>
-            <div><strong>Campaign:</strong> One Day ML Flash Course (₹599 + GST)</div>
+            <div><strong>Campaign:</strong> One Day AI-ML Flash Course (₹599 + GST)</div>
             <div><strong>Status:</strong> Verified Waitlist Entry</div>
           </div>
         `;
