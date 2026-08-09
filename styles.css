@@ -1,6 +1,6 @@
 /* ----------------------------------------------------
-   STUDENT iPHONE 17 PRO MAX REWARDS — MOBILE-FIRST UI
-   iOS & Android Native Mobile Touch Optimizations
+   STUDENT REWARDS — ONE DAY ML FLASH COURSE CAMPAIGN
+   Warm Sunset Gold & Ivory Luxury Palette • Mobile-First
 ---------------------------------------------------- */
 
 :root {
@@ -8,18 +8,19 @@
   --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   
-  --bg-page: #fffcf5;
-  --bg-gradient: linear-gradient(180deg, #fffcf5 0%, #fff7ed 35%, #fef3c7 100%);
+  --bg-page: #fafaf9;
+  --bg-gradient: linear-gradient(180deg, #fafaf9 0%, #fffcf5 35%, #fef3c7 100%);
   --bg-card: #ffffff;
   
   --text-main: #0f172a;
   --text-sub: #475569;
   --text-muted: #64748b;
   
+  /* Harmonious Sunset Gold & Obsidian Highlights */
   --gold-primary: #d97706;
   --gold-accent: #f59e0b;
   --gold-light: #fef08a;
-  --gold-gradient: linear-gradient(135deg, #d97706 0%, #ea580c 50%, #dc2626 100%);
+  --gold-gradient: linear-gradient(135deg, #d97706 0%, #ea580c 50%, #b45309 100%);
   
   --cta-gradient: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
   --cta-shadow: 0 12px 32px rgba(234, 88, 12, 0.35);
@@ -29,7 +30,7 @@
   
   --shadow-sm: 0 4px 12px rgba(217, 119, 6, 0.06);
   --shadow-md: 0 10px 30px rgba(217, 119, 6, 0.12);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
   
   --radius-sm: 10px;
   --radius-md: 18px;
@@ -44,7 +45,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: transparent; /* Remove blue flash on iOS/Android touch */
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -79,7 +80,7 @@ body.warm-champagne-theme {
   transform: translateX(-50%);
   width: 550px;
   height: 550px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 .orb-2 {
@@ -87,7 +88,7 @@ body.warm-champagne-theme {
   right: -100px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 a {
@@ -115,7 +116,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 252, 245, 0.94);
+  background: rgba(250, 250, 249, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
@@ -156,11 +157,31 @@ button {
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.01em;
+  color: var(--text-main);
 }
 
 .logo-highlight {
   color: var(--gold-primary);
 }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-admin-nav {
+  padding: 8px 14px;
+  background: #fef3c7;
+  border: 1px solid var(--gold-accent);
+  color: #92400e;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.btn-admin-nav:hover { background: #fde68a; }
 
 .btn-status-nav {
   display: flex;
@@ -188,7 +209,7 @@ button {
    2. SOCIAL PROOF TICKER
 ---------------------------------------------------- */
 .proof-ticker {
-  background: #0f172a;
+  background: #1e293b;
   color: #fef08a;
   padding: 9px 16px;
   font-size: 0.82rem;
@@ -219,7 +240,7 @@ button {
 
 
 /* ----------------------------------------------------
-   3. HERO SECTION (MOBILE-FIRST COMPACT)
+   3. HERO SECTION (ML FLASH COURSE OFFER)
 ---------------------------------------------------- */
 .hero {
   position: relative;
@@ -251,10 +272,19 @@ button {
   margin-bottom: 12px;
 }
 
-.hero-title {
+.hero-main-brand {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.hero-offer-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 5vw, 3.2rem);
-  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 3.4rem);
+  font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--text-main);
@@ -273,6 +303,14 @@ button {
   .headline-gold { white-space: normal; }
 }
 
+.hero-hook-text {
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  font-weight: 600;
+  color: var(--text-sub);
+  max-width: 640px;
+  margin-bottom: 18px;
+}
+
 /* Pricing Highlight Box */
 .hero-price-badge {
   display: flex;
@@ -281,14 +319,15 @@ button {
   background: #ffffff;
   border: 2px solid var(--gold-accent);
   box-shadow: var(--shadow-md);
-  padding: 8px 22px;
+  padding: 10px 24px;
   border-radius: var(--radius-lg);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .price-main {
   display: flex;
   align-items: baseline;
+  gap: 2px;
 }
 
 .price-symbol {
@@ -303,6 +342,13 @@ button {
   font-weight: 800;
   color: var(--text-main);
   line-height: 1;
+}
+
+.price-gst {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-left: 4px;
 }
 
 .price-details {
@@ -327,13 +373,6 @@ button {
   border-radius: var(--radius-full);
   font-size: 0.7rem;
   font-weight: 700;
-}
-
-.hero-subtitle {
-  font-size: 0.88rem;
-  color: var(--text-sub);
-  margin-bottom: 18px;
-  font-weight: 500;
 }
 
 /* Product Showcase Visual */
@@ -474,15 +513,92 @@ button {
 
 
 /* ----------------------------------------------------
-   5. HOW IT WORKS & DETAILS SECTIONS
+   5. STUDENT REWARD HERO SECTION
 ---------------------------------------------------- */
+.reward-hero-section {
+  padding: 50px 20px;
+}
+
+.reward-card-hero {
+  background: #ffffff;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  max-width: 550px;
+  margin: 24px auto 0 auto;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reward-img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 12px 24px rgba(217, 119, 6, 0.25));
+}
+
+.reward-badge-pill {
+  background: var(--gold-gradient);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.reward-card-hero h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.reward-recipient {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-bottom: 6px;
+}
+
+.reward-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.btn-cta-secondary {
+  width: 100%;
+  padding: 14px 28px;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+}
+
+
+/* ----------------------------------------------------
+   6. COURSE OFFER & CURRICULUM GRID
+---------------------------------------------------- */
+.course-offer-section,
+.curriculum-section,
+.message-section,
+.counter-section,
 .how-section,
-.details-section,
+.urgency-section,
+.final-cta-section,
 .faq-section {
   padding: 48px 16px;
 }
 
-.details-section {
+.course-offer-section {
   background: rgba(255, 255, 255, 0.6);
   border-y: 1px solid var(--border-light);
 }
@@ -492,36 +608,188 @@ button {
   margin: 0 auto;
 }
 
-.section-heading {
-  text-align: center;
-  margin-bottom: 32px;
+.offer-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-md);
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-.sub-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
+.tag-gold {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
   color: var(--gold-primary);
   letter-spacing: 0.08em;
+  margin-bottom: 6px;
 }
 
-.section-heading h2 {
+.offer-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3.8vw, 2.2rem);
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--text-main);
-  margin-top: 4px;
+  margin-bottom: 14px;
 }
 
-.section-heading p {
-  font-size: 0.88rem;
+.offer-pricing {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fffcf5;
+  border: 1px solid var(--border-light);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: 22px;
+}
+
+.old-price {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.new-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-price .lbl { font-size: 0.68rem; color: var(--gold-primary); font-weight: 800; text-transform: uppercase; }
+.new-price .val { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--text-main); }
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
   color: var(--text-sub);
-  margin-top: 4px;
 }
 
-/* Steps Grid */
+.check {
+  color: var(--gold-primary);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.subtext-center {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.skill-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.skill-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.skill-card p {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
+
+
+/* ----------------------------------------------------
+   7. MESSAGE & COUNTER SECTIONS
+---------------------------------------------------- */
+.message-box {
+  background: #ffffff;
+  border: 2px solid var(--gold-accent);
+  border-radius: var(--radius-lg);
+  padding: 36px 24px;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-md);
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.message-quote {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+.counter-section {
+  background: #1e293b;
+  color: #ffffff;
+  border-y: 1px solid var(--border-light);
+}
+
+.counter-section .sub-tag { color: var(--gold-accent); }
+
+.counter-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.counter-display {
+  margin: 16px 0 8px 0;
+}
+
+.count-number {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 5rem);
+  font-weight: 800;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.counter-note {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+/* How It Works Steps Grid */
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
 }
 
@@ -532,105 +800,92 @@ button {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-light);
-  transition: transform var(--transition-fast);
 }
 
 .step-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: #fef3c7;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
   color: var(--gold-primary);
-  font-weight: 700;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--gold-primary);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .step-card h3 {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-main);
   margin-bottom: 6px;
 }
 
 .step-card p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-sub);
-}
-
-/* Details Grid */
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-}
-
-.details-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.card-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.card-icon { font-size: 1.2rem; }
-
-.card-head h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.details-card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.details-card li {
-  position: relative;
-  padding-left: 14px;
-  font-size: 0.85rem;
-  color: var(--text-sub);
-}
-
-.details-card li::before {
-  content: "•";
-  position: absolute;
-  left: 2px;
-  color: var(--gold-primary);
-  font-size: 1.1rem;
-  line-height: 1;
 }
 
 
 /* ----------------------------------------------------
-   6. FAQ ACCORDION
+   8. URGENCY & FINAL CTA
+---------------------------------------------------- */
+.urgency-box {
+  background: #ffffff;
+  border: 2px solid var(--gold-accent);
+  border-radius: var(--radius-lg);
+  padding: 32px 20px;
+  max-width: 650px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-md);
+}
+
+.urgency-head {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--gold-primary);
+  margin-bottom: 6px;
+}
+
+.urgency-box h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.final-cta-section {
+  background: rgba(255, 255, 255, 0.7);
+  border-y: 1px solid var(--border-light);
+}
+
+.final-cta-section h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.final-offer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fffcf5;
+  border: 1px solid var(--border-light);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  margin: 12px 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.val-old { text-decoration: line-through; color: var(--text-muted); }
+.arrow { color: var(--gold-primary); }
+.val-new { color: var(--gold-primary); font-weight: 800; }
+
+.final-reward-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+
+/* ----------------------------------------------------
+   9. FAQ ACCORDION
 ---------------------------------------------------- */
 .faq-accordion {
   max-width: 700px;
@@ -685,7 +940,7 @@ button {
 
 
 /* ----------------------------------------------------
-   7. STICKY MOBILE BAR (iOS & ANDROID ENHANCED)
+   10. STICKY MOBILE BAR
 ---------------------------------------------------- */
 .mobile-sticky-bar {
   display: none;
@@ -694,7 +949,7 @@ button {
   left: 0;
   right: 0;
   z-index: 90;
-  background: rgba(255, 252, 245, 0.96);
+  background: rgba(250, 250, 249, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--border-light);
@@ -718,7 +973,7 @@ button {
 
 .m-price {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-main);
 }
@@ -740,7 +995,7 @@ button {
 
 
 /* ----------------------------------------------------
-   8. FOOTER
+   11. FOOTER
 ---------------------------------------------------- */
 .site-footer {
   background: #0f172a;
@@ -787,7 +1042,7 @@ button {
 
 
 /* ----------------------------------------------------
-   9. MODALS SYSTEM (MOBILE BOTTOM SHEET ENHANCEMENT)
+   12. MODALS SYSTEM & ADMIN DASHBOARD
 ---------------------------------------------------- */
 .modal-overlay {
   position: fixed;
@@ -827,6 +1082,11 @@ button {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.admin-card {
+  max-width: 780px;
+  text-align: left;
+}
+
 .mobile-drag-handle {
   display: none;
   width: 38px;
@@ -836,7 +1096,6 @@ button {
   margin: 0 auto 14px auto;
 }
 
-/* Native Bottom Sheet on Mobile Viewports */
 @media (max-width: 640px) {
   .modal-overlay {
     align-items: flex-end;
@@ -946,35 +1205,6 @@ button {
   padding-left: 8px;
 }
 
-.input-phone:focus { box-shadow: none; }
-
-.form-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%3cd97706' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 18px;
-  text-align: left;
-}
-
-.checkbox-input {
-  width: 17px;
-  height: 17px;
-  margin-top: 2px;
-  accent-color: var(--gold-primary);
-}
-
-.checkbox-group label {
-  font-size: 0.78rem;
-  color: var(--text-sub);
-}
-
 .btn-modal-primary {
   width: 100%;
   padding: 15px;
@@ -993,193 +1223,7 @@ button {
 
 .btn-modal-primary:active { transform: scale(0.98); }
 
-/* Payment Screen */
-.security-badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #059669;
-  background: #d1fae5;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  margin-bottom: 6px;
-}
-
-.summary-box {
-  background: #fffcf5;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 14px;
-  margin-bottom: 16px;
-  text-align: left;
-}
-
-.summary-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.item-info {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.emoji { font-size: 1.2rem; }
-.name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--text-main); }
-.sub { font-size: 0.75rem; color: var(--text-muted); }
-
-.price {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.2rem;
-  color: var(--gold-primary);
-}
-
-.summary-divider {
-  height: 1px;
-  background: var(--border-subtle);
-  margin: 10px 0;
-}
-
-.user-info .info-line {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.82rem;
-  margin-bottom: 2px;
-}
-
-.user-info span { color: var(--text-muted); }
-
-.payment-tabs-wrapper { margin-bottom: 16px; text-align: left; }
-.pay-label { font-size: 0.82rem; font-weight: 700; margin-bottom: 8px; display: block; }
-
-.pay-tabs {
-  display: flex;
-  gap: 4px;
-  background: #fef3c7;
-  padding: 3px;
-  border-radius: var(--radius-md);
-  margin-bottom: 12px;
-}
-
-.pay-tab {
-  flex: 1;
-  padding: 7px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  border-radius: var(--radius-sm);
-  text-align: center;
-}
-
-.pay-tab.active {
-  background: #ffffff;
-  color: var(--gold-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-.upi-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
-
-.upi-card {
-  padding: 10px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  background: #ffffff;
-}
-
-.upi-card.selected {
-  border-color: var(--gold-primary);
-  background: #fffcf5;
-}
-
-.icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.65rem;
-  color: #fff;
-}
-
-.gpay { background: #4285f4; }
-.phonepe { background: #5f259f; }
-.paytm { background: #00baf2; }
-.bhim { background: #f37023; }
-
-.qr-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px;
-  background: #fffcf5;
-  border-radius: var(--radius-md);
-  font-size: 0.78rem;
-  color: var(--text-sub);
-}
-
-.qr-code { background: #fff; padding: 10px; border-radius: var(--radius-sm); margin-bottom: 6px; border: 1px solid var(--border-light); }
-
-.card-form .row { display: flex; gap: 8px; margin-top: 8px; }
-
-.legal-purpose {
-  background: #fffbe8;
-  border: 1px solid #fef3c7;
-  padding: 8px 10px;
-  border-radius: var(--radius-sm);
-  font-size: 0.72rem;
-  color: #92400e;
-  display: flex;
-  gap: 6px;
-  margin-bottom: 16px;
-  text-align: left;
-}
-
-.btn-pay-action {
-  width: 100%;
-  padding: 15px;
-  background: #10b981;
-  color: #ffffff;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 800;
-  border-radius: var(--radius-full);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.spinner {
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #ffffff;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin { to { transform: rotate(360deg); } }
-.hidden { display: none !important; }
-
-/* Success Card */
+/* Success Ticket Pass */
 .success-icon {
   width: 60px;
   height: 60px;
@@ -1262,6 +1306,7 @@ button {
 }
 
 .margin-top-sm { margin-top: 10px; }
+.margin-top-xs { margin-top: 6px; }
 .text-center { text-align: center; }
 
 /* Status Result */
@@ -1272,4 +1317,125 @@ button {
   background: #fffcf5;
   border: 1px solid var(--border-light);
   text-align: left;
+}
+
+/* ----------------------------------------------------
+   13. ADMIN KPI DASHBOARD STYLES
+---------------------------------------------------- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.kpi-card {
+  background: #fffcf5;
+  border: 1px solid var(--border-light);
+  padding: 12px 10px;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.kpi-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold-primary);
+}
+
+.kpi-lbl {
+  font-size: 0.72rem;
+  color: var(--text-sub);
+  font-weight: 600;
+}
+
+.traffic-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+}
+
+.traffic-box h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.source-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.source-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.bar-bg {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 99px;
+}
+
+.admin-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.admin-table-header h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.btn-csv-export {
+  padding: 6px 14px;
+  background: #059669;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.78rem;
+  border-radius: var(--radius-full);
+}
+
+.table-responsive {
+  overflow-x: auto;
+  max-height: 220px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-table th {
+  background: #fffcf5;
+  font-weight: 700;
+  color: var(--text-main);
+  position: sticky;
+  top: 0;
 }
