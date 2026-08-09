@@ -40,9 +40,6 @@
       </a>
 
       <div class="nav-actions">
-        <button id="openAdminBtn" class="btn-admin-nav" aria-label="Open Admin Dashboard">
-          📊 ADMIN
-        </button>
         <button id="openStatusBtn" class="btn-status-nav" aria-label="Check Registration Status">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
@@ -443,7 +440,7 @@
   </footer>
 
 
-  <!-- MODAL 1: JOIN WAITLIST REGISTRATION POPUP (WHATSAPP NUMBER FIELD) -->
+  <!-- MODAL 1: JOIN WAITLIST REGISTRATION POPUP -->
   <div id="waitlistModal" class="modal-overlay" aria-hidden="true">
     <div class="modal-card">
       <div class="mobile-drag-handle"></div>
@@ -553,91 +550,6 @@
       </form>
 
       <div id="statusResultContainer" class="status-result-box hidden"></div>
-    </div>
-  </div>
-
-
-  <!-- MODAL 4: ADMIN / VALIDATION DASHBOARD -->
-  <div id="adminModal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-card admin-card">
-      <div class="mobile-drag-handle"></div>
-      <button class="close-btn" id="closeAdminModal">&times;</button>
-      
-      <div class="modal-header">
-        <span class="security-badge" style="background:#dbeafe; color:#1e40af;">📊 CAMPAIGN VALIDATION KPI DASHBOARD</span>
-        <h2 class="modal-title">STUDENT REWARDS CAMPAIGN</h2>
-        <p class="modal-subtitle">Live interest metrics & student waitlist database</p>
-      </div>
-
-      <!-- KPI Summary Cards Grid -->
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-val" id="kpiTotalCount">327</div>
-          <div class="kpi-lbl">Total Interested Students</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-val" id="kpiTodayCount">42</div>
-          <div class="kpi-lbl">Today's Registrations</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-val" id="kpiWeekCount">198</div>
-          <div class="kpi-lbl">This Week</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-val" id="kpiConvRate">28.4%</div>
-          <div class="kpi-lbl">Conversion Rate</div>
-        </div>
-      </div>
-
-      <!-- Traffic Source Breakdown -->
-      <div class="traffic-box">
-        <h4>Traffic Sources</h4>
-        <div class="source-bars">
-          <div class="source-item">
-            <span>Instagram (45%)</span>
-            <div class="bar-bg"><div class="bar-fill" style="width: 45%; background: #e1306c;"></div></div>
-          </div>
-          <div class="source-item">
-            <span>WhatsApp (30%)</span>
-            <div class="bar-bg"><div class="bar-fill" style="width: 30%; background: #25d366;"></div></div>
-          </div>
-          <div class="source-item">
-            <span>Facebook (15%)</span>
-            <div class="bar-bg"><div class="bar-fill" style="width: 15%; background: #1877f2;"></div></div>
-          </div>
-          <div class="source-item">
-            <span>Direct / Communities (10%)</span>
-            <div class="bar-bg"><div class="bar-fill" style="width: 10%; background: #f59e0b;"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Export Action & Table -->
-      <div class="admin-table-header">
-        <h4>Registered Students Log</h4>
-        <button id="exportCsvBtn" class="btn-csv-export">
-          📥 EXPORT CSV
-        </button>
-      </div>
-
-      <div class="table-responsive">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>WhatsApp Number</th>
-              <th>Email</th>
-              <th>Date</th>
-              <th>Source</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="adminTableBody">
-            <!-- Dynamically populated -->
-          </tbody>
-        </table>
-      </div>
     </div>
   </div>
 

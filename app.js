@@ -1,6 +1,6 @@
 /* ----------------------------------------------------
    STUDENT REWARDS — ONE DAY ML FLASH COURSE CAMPAIGN
-   Client Logic & Validation KPI Dashboard
+   Client Logic & Validation Database
 ---------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,21 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const counterNoteText = document.getElementById('counterNoteText');
     if (counterNoteText) counterNoteText.textContent = `${total} students`;
-
-    // Admin Dashboard KPIs
-    const kpiTotalCount = document.getElementById('kpiTotalCount');
-    if (kpiTotalCount) kpiTotalCount.textContent = total;
-
-    const todayCount = getWaitlistStorage().filter(r => r.date === new Date().toLocaleDateString('en-IN')).length + 42;
-    const kpiTodayCount = document.getElementById('kpiTodayCount');
-    if (kpiTodayCount) kpiTodayCount.textContent = todayCount;
-
-    const kpiConvRate = document.getElementById('kpiConvRate');
-    if (kpiConvRate) {
-      const visitors = Math.max(1200, total * 3.5);
-      const rate = ((total / visitors) * 100).toFixed(1);
-      kpiConvRate.textContent = `${rate}%`;
-    }
   }
 
   // Active Current Registration State
@@ -70,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const waitlistModal = document.getElementById('waitlistModal');
   const successModal = document.getElementById('successModal');
   const statusModal = document.getElementById('statusModal');
-  const adminModal = document.getElementById('adminModal');
 
   function openModal(modal) {
     closeAllModals();
+    if (!modal) return;
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -94,16 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('heroCtaBtn')?.addEventListener('click', () => openModal(waitlistModal));
   document.getElementById('openStatusBtn')?.addEventListener('click', () => openModal(statusModal));
-  document.getElementById('openAdminBtn')?.addEventListener('click', () => {
-    renderAdminTable();
-    openModal(adminModal);
-  });
 
   // Close Handlers
   document.getElementById('closeWaitlistModal')?.addEventListener('click', closeAllModals);
   document.getElementById('closeSuccessBtn')?.addEventListener('click', closeAllModals);
   document.getElementById('closeStatusModal')?.addEventListener('click', closeAllModals);
-  document.getElementById('closeAdminModal')?.addEventListener('click', closeAllModals);
 
   modalOverlays.forEach(overlay => {
     overlay.addEventListener('click', (e) => {
@@ -251,61 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
       }
-    });
-  }
-
-
-  // --- ADMIN DASHBOARD RENDER & CSV EXPORT ---
-  function renderAdminTable() {
-    const tableBody = document.getElementById('adminTableBody');
-    if (!tableBody) return;
-
-    const list = getWaitlistStorage();
-    
-    // Seed initial records if empty
-    const dummyRecords = [
-      { regId: 'SR-892401', name: 'Rohan Verma', mobile: '9876543210', email: 'rohan@gmail.com', date: '09/08/2026', source: 'Instagram', status: 'Registered' },
-      { regId: 'SR-512039', name: 'Aarav Mehta', mobile: '9812345678', email: 'aarav@yahoo.com', date: '09/08/2026', source: 'WhatsApp', status: 'Registered' },
-      { regId: 'SR-940218', name: 'Diya Kapoor', mobile: '9765432109', email: 'diya@outlook.com', date: '08/08/2026', source: 'Instagram', status: 'Registered' }
-    ];
-
-    const allData = [...list, ...dummyRecords];
-
-    tableBody.innerHTML = allData.map(r => `
-      <tr>
-        <td><strong>${r.regId}</strong></td>
-        <td>${r.name}</td>
-        <td>+91 ${r.mobile}</td>
-        <td>${r.email}</td>
-        <td>${r.date}</td>
-        <td>${r.source}</td>
-        <td><span style="color:#059669; font-weight:700;">${r.status}</span></td>
-      </tr>
-    `).join('');
-  }
-
-  const exportCsvBtn = document.getElementById('exportCsvBtn');
-  if (exportCsvBtn) {
-    exportCsvBtn.addEventListener('click', () => {
-      const list = getWaitlistStorage();
-      const dummyRecords = [
-        { regId: 'SR-892401', name: 'Rohan Verma', mobile: '9876543210', email: 'rohan@gmail.com', date: '09/08/2026', source: 'Instagram', status: 'Registered' },
-        { regId: 'SR-512039', name: 'Aarav Mehta', mobile: '9812345678', email: 'aarav@yahoo.com', date: '09/08/2026', source: 'WhatsApp', status: 'Registered' },
-        { regId: 'SR-940218', name: 'Diya Kapoor', mobile: '9765432109', email: 'diya@outlook.com', date: '08/08/2026', source: 'Instagram', status: 'Registered' }
-      ];
-      const allData = [...list, ...dummyRecords];
-
-      let csv = 'Registration ID,Name,WhatsApp Number,Email,Date,Source,Status\n';
-      allData.forEach(r => {
-        csv += `"${r.regId}","${r.name}","+91 ${r.mobile}","${r.email}","${r.date}","${r.source}","${r.status}"\n`;
-      });
-
-      const blob = new Blob([csv], { type: 'text/csv' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.setAttribute('href', url);
-      a.setAttribute('download', 'student_rewards_ml_course_waitlist.csv');
-      a.click();
     });
   }
 
