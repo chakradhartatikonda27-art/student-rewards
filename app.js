@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navigator.share) {
         navigator.share({
           title: 'Student Rewards — ML Flash Course',
-          text: `Join the One Day ML Flash Course waitlist & get a chance to win an iPhone 15 Pro Max! My Registration ID: ${currentRegistration.regId}`,
+          text: `Join the One Day ML Flash Course waitlist & get a chance to win an iPhone 17 Pro Max! My Registration ID: ${currentRegistration.regId}`,
           url: window.location.href
         }).catch(() => {});
       } else {
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     whatsappBtn.addEventListener('click', () => {
       const text = encodeURIComponent(
         `🎉 *Joined the Student Rewards Waitlist!*\n\n` +
-        `Campaign: One Day ML Flash Course + iPhone 15 Pro Max Reward\n` +
+        `Campaign: One Day ML Flash Course + iPhone 17 Pro Max Reward\n` +
         `Registration ID: ${currentRegistration.regId}\n` +
         `Name: ${currentRegistration.name}\n\n` +
         `Join the waitlist here: ${window.location.href}`
